@@ -17,7 +17,7 @@
 <!-- ==========================================================================
      FELIPE E. HARKER — ACADEMIC PROJECTS
      --------------------------------------------------------------------------
-     The front page of the academic site: one row per project, each linking to
+     The front page of the academic site: one tile per project, each linking to
      its page under projects/. Static HTML, no build step, no JavaScript.
 
      Every class here is defined in /standards/hark.css (its source is
@@ -30,15 +30,28 @@
         Images go in assets/projects/<project>/; working files (models,
         board PDFs) in source/<project>/, never in site/.
      2. Add a cover: 3:2, 1500 x 1000 or smaller, JPEG, at
-        assets/covers/<project>.jpg.
-     3. Copy one <li class="work"> block below. Every row carries the same
+        assets/covers/<project>.jpg. For now the tiles show a
+        .work-cover-placeholder instead (planning/decisions.md), and a new
+        tile does too.
+     3. Copy one <li class="work"> block below. Every tile carries the same
         parts in the same order; omit an element rather than leave it empty.
      ====================================================================== -->
+
+<!-- Running head ------------------------------------------------------- -->
+<header class="runhead">
+  <a class="runhead-owner" href="https://felipeharker.org/">Felipe E. Harker</a>
+  <nav class="runhead-links" aria-label="Site">
+    <a href="https://felipeharker.org/">Portfolio</a>
+    <a href="/" aria-current="page">Academic</a>
+    <a href="https://hark-birding.onrender.com/">Birding</a>
+    <a href="https://hark-resume.onrender.com/">Resume</a>
+  </nav>
+</header>
 
 <article class="doc">
 
 <!-- Masthead ------------------------------------------------------------- -->
-<header>
+<header class="masthead">
   <p class="kicker">Academic Work</p>
   <h1 class="title">Academic Projects</h1>
   <p class="subtitle">Architecture and urban design from the University of Houston</p>
@@ -65,7 +78,10 @@
   <!-- Living Outside the Box -------------------------------------------- -->
   <li class="work">
     <a class="work-cover" href="projects/living-outside-the-box.html" aria-hidden="true" tabindex="-1">
-      <img src="assets/covers/living-outside-the-box.jpg" alt="">
+      <span class="work-cover-placeholder">
+        <span class="name">Living Outside the Box</span>
+        <span class="note">Cover pending</span>
+      </span>
     </a>
     <div class="work-facts">
       <h3 class="work-title">
@@ -87,7 +103,10 @@
   <!-- Dead Mall Fall ---------------------------------------------------- -->
   <li class="work">
     <a class="work-cover" href="projects/dead-mall-fall.html" aria-hidden="true" tabindex="-1">
-      <img src="assets/covers/dead-mall-fall.jpg" alt="">
+      <span class="work-cover-placeholder">
+        <span class="name">Dead Mall Fall</span>
+        <span class="note">Cover pending</span>
+      </span>
     </a>
     <div class="work-facts">
       <h3 class="work-title">
@@ -107,7 +126,10 @@
   <!-- Collingsworth Marketplace ----------------------------------------- -->
   <li class="work">
     <a class="work-cover" href="projects/collingsworth-marketplace.html" aria-hidden="true" tabindex="-1">
-      <img src="assets/covers/collingsworth-marketplace.jpg" alt="">
+      <span class="work-cover-placeholder">
+        <span class="name">Collingsworth Marketplace</span>
+        <span class="note">Cover pending</span>
+      </span>
     </a>
     <div class="work-facts">
       <h3 class="work-title">

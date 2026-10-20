@@ -2,8 +2,9 @@
 
 The academic architecture and urban design projects of Felipe E. Harker:
 three projects from the Bachelor of Architecture at the University of
-Houston, a page each. Served at **https://hark-academic.onrender.com/**, and
-linked from the portfolio, [felipeharker.org](https://felipeharker.org/).
+Houston, a page each. Served at **https://hark-academic.onrender.com/**. Each
+project also has a tile of its own on the portfolio's front page,
+[felipeharker.org](https://felipeharker.org/), which links its page here.
 
 One of four sites built to the same standard, each in its own repository:
 
@@ -50,6 +51,16 @@ hark_academic/
 The board-set PDFs are not published for now, and the pages do not link
 them (`hark_web`, `planning/decisions.md`).
 
+## Covers
+
+One file per project, `site/assets/covers/<slug>.jpg`, named after its page.
+For now no page shows them: every tile, here and on the portfolio's front
+page, is a `.work-cover-placeholder` (`hark_web`, `planning/decisions.md`).
+The files stay, so bringing a cover back is the `<img>` alone —
+`assets/covers/<slug>.jpg` here,
+`https://hark-academic.onrender.com/assets/covers/<slug>.jpg` on the front
+page.
+
 ## Running and checking
 
 Node 20.9 or newer, nothing else.
@@ -70,27 +81,31 @@ node tools/check.mjs
 
 1. **The page.** Copy `site/projects/living-outside-the-box.html` to
    `site/projects/<slug>.html`. Replace the title, kicker, subtitle,
-   dateline, description and every section. Keep the back link (`← Academic
-   Projects`) and the colophon as they are, with `aria-current="page"` on
-   Academic.
+   dateline, description and every section. Keep the running head, the back
+   link (`← Academic Projects`) and the colophon as they are, with
+   `aria-current="page"` on Academic in both lists of links.
 2. **The images.** Board images go in `site/assets/projects/<slug>/`, named
    with a short abbreviation of the project and two digits in page order —
    `lotb-03.jpg` — as JPEG, 2000 px on the long edge or smaller. Each `<img>`
    gets an `alt`, and `loading="lazy"` unless it is the lead plate.
 3. **The cover.** Crop the strongest image to 3:2, 1500 x 1000 or smaller, as
-   `site/assets/covers/<slug>.jpg`. The frame holds the ratio: an image that
-   does not match it is cropped to fit rather than letterboxed, so crop it
-   yourself first.
-4. **The row.** Copy one `<li class="work">` in `site/index.html` and fill in
+   `site/assets/covers/<slug>.jpg`. For now every tile shows a
+   `.work-cover-placeholder` instead, so the new tiles do too, naming the
+   project; the file waits for covers to return.
+4. **The tile.** Copy one `<li class="work">` in `site/index.html` and fill in
    the title, one-sentence summary, the stack (place / kind of work) and both
    links. Update the abstract above the list if it counts the projects.
-5. **Working files.** Models and the board-set PDF go in `source/<slug>/`.
+5. **The portfolio tile.** Every academic project has a tile of its own on
+   felipeharker.org's front page too, in `hark_web`: copy one academic
+   `<li class="work">` in `web/portfolio/site/index.html`, with the same
+   title, summary and stack, `Academic` as its kind, and links to its page,
+   `https://hark-academic.onrender.com/projects/<slug>.html`. When covers
+   return, its cover is `https://hark-academic.onrender.com/assets/covers/<slug>.jpg`,
+   never a copy.
+6. **Working files.** Models and the board-set PDF go in `source/<slug>/`.
    Git ignores them; back them up separately.
-6. **Check.** `node tools/serve.mjs` and look at the front page and the new
+7. **Check.** `node tools/serve.mjs` and look at the front page and the new
    page; then `node tools/check.mjs`.
-
-The portfolio's Academic Projects row links this site as a whole, so it does
-not change when a project is added.
 
 There is no stylesheet of its own: everything on these pages is the shared
 standard.
