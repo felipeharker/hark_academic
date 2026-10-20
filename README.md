@@ -83,7 +83,8 @@ node tools/check.mjs
    `site/projects/<slug>.html`. Replace the title, kicker, subtitle,
    dateline, description and every section. Keep the running head, the back
    link (`← Academic Projects`) and the colophon as they are, with
-   `aria-current="page"` on Academic in both lists of links.
+   `aria-current="page"` on Academic in the colophon and on the new project
+   in the running head's Academic menu (step 6).
 2. **The images.** Board images go in `site/assets/projects/<slug>/`, named
    with a short abbreviation of the project and two digits in page order —
    `lotb-03.jpg` — as JPEG, 2000 px on the long edge or smaller. Each `<img>`
@@ -102,9 +103,17 @@ node tools/check.mjs
    `https://hark-academic.onrender.com/projects/<slug>.html`. When covers
    return, its cover is `https://hark-academic.onrender.com/assets/covers/<slug>.jpg`,
    never a copy.
-6. **Working files.** Models and the board-set PDF go in `source/<slug>/`.
+6. **The running heads.** The running head at the top of every page lists
+   every academic project in its Academic menu, in the order of the tiles.
+   Add the new one to it on every page here — `projects/<slug>.html` from
+   the front page, `<slug>.html` from a project page — and, with its
+   absolute address, on every other page in the family: the portfolio, the
+   standards page and the page template in `hark_web`, the resume in
+   `hark_resume`, and `RUNHEAD` in `hark_birding`'s
+   `web/src/lib/siteConfig.ts` (`hark_web`, `wiki/Editing-the-Portfolio.md`).
+7. **Working files.** Models and the board-set PDF go in `source/<slug>/`.
    Git ignores them; back them up separately.
-7. **Check.** `node tools/serve.mjs` and look at the front page and the new
+8. **Check.** `node tools/serve.mjs` and look at the front page and the new
    page; then `node tools/check.mjs`.
 
 There is no stylesheet of its own: everything on these pages is the shared
