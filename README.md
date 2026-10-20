@@ -117,4 +117,5 @@ no build step, publish directory `site`. The settings are recorded in
 [`render.yaml`](render.yaml).
 
 The old address, felipeharker.org/academic/, redirects here, path and all,
-from `hark-site`, the portfolio's Render service.
+from `hark-site`, the portfolio's Render service. academic.felipeharker.org
+is Porkbun URL forwarding to this site's front page.
