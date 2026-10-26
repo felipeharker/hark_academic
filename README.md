@@ -19,6 +19,9 @@ The design standard — the one shared stylesheet, its docs and its specimen
 page — lives in `hark_web` and is served at
 https://felipeharker.org/standards/. Every page here links
 `https://felipeharker.org/standards/hark.css`; there is no copy of it here.
+Every page also links the standard's one script,
+`https://felipeharker.org/standards/hark.js`, which sets the page in the
+design — sans or serif — the reader chose on felipeharker.org's front page.
 
 ## Layout
 
