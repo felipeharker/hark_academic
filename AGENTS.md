@@ -41,8 +41,9 @@ standard; the standard, the decision log and the roadmap for all four live in
    absolute (`tools/site.mjs`), same tab. To anyone else: absolute,
    `target="_blank" rel="noopener noreferrer"`.
 10. **Text.** Plain language; headings in Title Case, never numbered. Every
-    page ends with the colophon and its site links — this site's own link is
-    `/`, with `aria-current="page"`; the standards link is
+    page opens with the running head and ends with the colophon's site links,
+    both Portfolio · Academic (`tools/site.mjs`, `NAV`), with no back link —
+    this site's own link is `/`, with `aria-current="page"`; the standards link is
     `https://felipeharker.org/standards/`.
 11. **Third-party material** never goes in the repository; it stays in
     `source/`. Credit a source in the page text when a project relies on it.

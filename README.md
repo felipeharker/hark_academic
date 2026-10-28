@@ -31,7 +31,7 @@ hark_academic/
   AGENTS.md                   rules for coding agents (CLAUDE.md points here)
   render.yaml                 the Render service, recorded
   tools/
-    site.mjs                  this site's address, and the family's
+    site.mjs                  this site's address, and its running head's links
     serve.mjs                 serve site/ locally
     check.mjs                 check pages, links and published files
   source/                     working files, git-ignored (see its README)
@@ -97,9 +97,10 @@ node tools/check.mjs
 
 1. **The page.** Copy `site/projects/living-outside-the-box.html` to
    `site/projects/<slug>.html`. Replace the title, kicker, subtitle,
-   dateline, description and every section. Keep the running head, the back
-   link (`← Academic Projects`) and the colophon as they are, with
-   `aria-current="page"` on Academic in both lists of links. In the
+   dateline, description and every section. Keep the running head and the
+   colophon as they are — Portfolio, then Academic with
+   `aria-current="page"` — and add no back link: the running head is the
+   way up. In the
    `<head>`, point the canonical link, `og:url` and `og:image` at the new
    page and its cover, repeat its title and description in `og:title` and
    `og:description`, and add its address to `site/sitemap.xml`.
