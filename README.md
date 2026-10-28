@@ -2,7 +2,7 @@
 
 The academic architecture and urban design projects of Felipe E. Harker:
 three projects from the Bachelor of Architecture at the University of
-Houston, a page each. Served at **https://hark-academic.onrender.com/**. Each
+Houston, a page each. Served at **https://academic.felipeharker.org/**. Each
 project also has a tile of its own on the portfolio's front page,
 [felipeharker.org](https://felipeharker.org/), which links its page here.
 
@@ -11,9 +11,9 @@ One of four sites built to the same standard, each in its own repository:
 | Site | Address | Repository |
 |---|---|---|
 | Portfolio, and the standards | https://felipeharker.org/ | [`hark_web`](https://github.com/felipeharker/hark_web) |
-| Academic | https://hark-academic.onrender.com/ | `hark_academic`, this one |
-| Birding | https://hark-birding.onrender.com/ | [`hark_birding`](https://github.com/felipeharker/hark_birding) |
-| Resume | https://hark-resume.onrender.com/ | [`hark_resume`](https://github.com/felipeharker/hark_resume) |
+| Academic | https://academic.felipeharker.org/ | `hark_academic`, this one |
+| Birding | https://birds.felipeharker.org/ | [`hark_birding`](https://github.com/felipeharker/hark_birding) |
+| Resume | https://resume.felipeharker.org/ | [`hark_resume`](https://github.com/felipeharker/hark_resume) |
 
 The design standard — the one shared stylesheet, its docs and its specimen
 page — lives in `hark_web` and is served at
@@ -61,7 +61,7 @@ For now no page shows them: every tile, here and on the portfolio's front
 page, is a `.work-cover-placeholder` (`hark_web`, `planning/decisions.md`).
 The files stay, so bringing a cover back is the `<img>` alone —
 `assets/covers/<slug>.jpg` here,
-`https://hark-academic.onrender.com/assets/covers/<slug>.jpg` on the front
+`https://academic.felipeharker.org/assets/covers/<slug>.jpg` on the front
 page.
 
 ## Running and checking
@@ -102,8 +102,8 @@ node tools/check.mjs
    felipeharker.org's front page too, in `hark_web`: copy one academic
    `<li class="work">` in `web/portfolio/site/index.html`, with the same
    title, summary and stack, `Academic` as its kind, and links to its page,
-   `https://hark-academic.onrender.com/projects/<slug>.html`. When covers
-   return, its cover is `https://hark-academic.onrender.com/assets/covers/<slug>.jpg`,
+   `https://academic.felipeharker.org/projects/<slug>.html`. When covers
+   return, its cover is `https://academic.felipeharker.org/assets/covers/<slug>.jpg`,
    never a copy.
 6. **Working files.** Models and the board-set PDF go in `source/<slug>/`.
    Git ignores them; back them up separately.
@@ -119,6 +119,7 @@ A Render static site, `hark-academic`, deployed from `main` on every push:
 no build step, publish directory `site`. The settings are recorded in
 [`render.yaml`](render.yaml).
 
-The old address, felipeharker.org/academic/, redirects here, path and all,
-from `hark-site`, the portfolio's Render service. academic.felipeharker.org
-is Porkbun URL forwarding to this site's front page.
+Its address is academic.felipeharker.org, the service's custom domain: a
+Porkbun CNAME to hark-academic.onrender.com, which still answers but is
+linked from nowhere. The old address, felipeharker.org/academic/, redirects
+here, path and all, from `hark-site`, the portfolio's Render service.

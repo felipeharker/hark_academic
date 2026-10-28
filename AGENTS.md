@@ -1,6 +1,6 @@
 # hark_academic — agent guide
 
-The academic projects site, https://hark-academic.onrender.com/. Read
+The academic projects site, https://academic.felipeharker.org/. Read
 [`README.md`](README.md) first. It is one of four sites built to one
 standard; the standard, the decision log and the roadmap for all four live in
 [`hark_web`](https://github.com/felipeharker/hark_web) (`web/standards/`,
