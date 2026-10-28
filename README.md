@@ -38,7 +38,10 @@ hark_academic/
   site/                       published, and nothing else
     index.html                one row per project
     projects/<slug>.html      one page per project
+    robots.txt                allow all; names the sitemap
+    sitemap.xml               every page's address
     assets/
+      og.jpg                  the front page's share card, 1200 x 630
       covers/<slug>.jpg       3:2 covers, 1500 x 1000 or smaller
       projects/<slug>/        the board images
 ```
@@ -64,6 +67,16 @@ The files stay, so bringing a cover back is the `<img>` alone —
 `https://academic.felipeharker.org/assets/covers/<slug>.jpg` on the front
 page.
 
+## Sharing and search
+
+Every page's `<head>` carries its canonical address and the card a link to
+it shows when it is shared — Open Graph and Twitter meta, every address
+absolute, its title and description the page's own. A project page's card is
+its cover; the front page's is `assets/og.jpg`, a plain typographic card
+(1200 x 630: the masthead's kicker, title and subtitle on white in the
+standard's type). `robots.txt` allows everything and names `sitemap.xml`,
+which lists every page.
+
 ## Running and checking
 
 Node 20.9 or newer, nothing else.
@@ -86,7 +99,10 @@ node tools/check.mjs
    `site/projects/<slug>.html`. Replace the title, kicker, subtitle,
    dateline, description and every section. Keep the running head, the back
    link (`← Academic Projects`) and the colophon as they are, with
-   `aria-current="page"` on Academic in both lists of links.
+   `aria-current="page"` on Academic in both lists of links. In the
+   `<head>`, point the canonical link, `og:url` and `og:image` at the new
+   page and its cover, repeat its title and description in `og:title` and
+   `og:description`, and add its address to `site/sitemap.xml`.
 2. **The images.** Board images go in `site/assets/projects/<slug>/`, named
    with a short abbreviation of the project and two digits in page order —
    `lotb-03.jpg` — as JPEG, 2000 px on the long edge or smaller. Each `<img>`
@@ -120,6 +136,6 @@ no build step, publish directory `site`. The settings are recorded in
 [`render.yaml`](render.yaml).
 
 Its address is academic.felipeharker.org, the service's custom domain: a
-Porkbun CNAME to hark-academic.onrender.com, which still answers but is
-linked from nowhere. The old address, felipeharker.org/academic/, redirects
+Porkbun CNAME to hark-academic.onrender.com, an address Render no longer
+serves (Render Subdomain: Disabled), so the site has one address. The old address, felipeharker.org/academic/, redirects
 here, path and all, from `hark-site`, the portfolio's Render service.
